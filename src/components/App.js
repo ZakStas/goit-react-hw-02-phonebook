@@ -28,6 +28,8 @@ class App extends Component {
     });
   };
 
+  
+
   addItem = item => {
     if (
       this.state.contacts.every(
@@ -58,7 +60,7 @@ class App extends Component {
         <h1>Phonebook</h1>
         <ContactForm onAddItem={this.addItem} />
         <h2>Contacts</h2>
-        <Filter onSetFilter={this.setFilter} />
+        <Filter onSetFilter={this.setFilter} value={this.state.filter} />
         <ContactList items={filtratedContacts} onDelete={this.deleteItem} />
       </div>
     );

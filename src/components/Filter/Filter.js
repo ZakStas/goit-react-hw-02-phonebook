@@ -2,7 +2,7 @@ import React from 'react';
 import shortid from 'shortid';
 import PropTypes from 'prop-types';
 
-const Filter = ({ onSetFilter }) => {
+const Filter = ({ value, onSetFilter }) => {
   const loginInputId = shortid();
 
   return (
@@ -14,11 +14,13 @@ const Filter = ({ onSetFilter }) => {
         name="filter"
         id={loginInputId}
         placeholder="Поиск контакта по имени"
+        value={value}
       />
     </form>
   );
 };
 Filter.propTypes = {
+  value: PropTypes.string.isRequired,
   onSetFilter: PropTypes.func.isRequired,
 };
 
